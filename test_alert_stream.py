@@ -73,7 +73,7 @@ assert windows == {
 value = to_kafka_messages(find_alerts(averages_of(41.126, 50), conditions)).first().value
 message = json.loads(value)
 assert set(message) == {"window", "t_avg", "h_avg", "code", "message", "timestamp"}
-assert (message["t_avg"], message["code"], message["message"]) == (41.13, "104", "It's too hot")
+assert (message["t_avg"], message["code"], message["message"]) == (41.126, "104", "It's too hot")
 
 spark.stop()
 print("OK")

@@ -79,8 +79,8 @@ def to_kafka_messages(alerts):
         F.to_json(
             F.struct(
                 "window",
-                F.round("t_avg", 2).alias("t_avg"),
-                F.round("h_avg", 2).alias("h_avg"),
+                "t_avg",
+                "h_avg",
                 "code",
                 "message",
                 F.current_timestamp().cast("string").alias("timestamp"),
